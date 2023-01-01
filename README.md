@@ -8,7 +8,7 @@
 
 
 Project started in spring 2009.  
-This example shows how to make use of optional user inputs, with the Nullable-class kwnown from .net "?"/ Nullable\<T\>.  
+This example shows how to make use of optional user inputs, with the Nullable-class known from .net "?"/ Nullable\<T\>.  
 
 Whenever an input parameter is optional, obviously the user either can give an input or maybe not. 
 For example we have a class with a property "Value" of a primitive numeric datatype like Double.
