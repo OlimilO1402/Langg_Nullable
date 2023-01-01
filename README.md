@@ -10,7 +10,7 @@
 Project started in spring 2009.  
 This example shows how to make use of optional user inputs, with the Nullable-class kwnown from .net "?"/ Nullable\<T\>.  
 
-Whenever an input parameter is optional, obviously the user either can give an input or maybe not.  
+Whenever an input parameter is optional, obviously the user either can give an input or maybe not. 
 For example we have a class with a property "Value" of a primitive numeric datatype like Double.
 The user makes inputs then clicks OK, then we have to read the input parameters.
 All input parameters in the first place are given as strings.
@@ -18,7 +18,7 @@ So we as developers have to parse and interpret all strings. A string can be emp
 If one input parameter is "empty" so there is no value given by the user. 
 You can let this happen if the parameter is not a mandatory field but optional.
 But we can not represent this state of a value with just the Double-datatype itself because
-what value in the double-range would you define as "empty"?
+what value in the double-range would you define as "empty"?  
 Some ideas how we may deal with the situation:  
 * You could say we only want positive values, so a negative value is the value for empty  
 * or only negative values, then any positive value is empty  

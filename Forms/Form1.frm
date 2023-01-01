@@ -126,7 +126,7 @@ Private m_ManValue As Double
 
 Private Sub Form_Load()
     Me.Caption = Me.Caption & " v" & App.Major & "." & App.Minor & "." & App.Revision
-    Set m_Optional = MNew.Nullable(vbDouble)
+    Set m_Optional = MNew.Nullable(EVbVarType.vbDouble)
 End Sub
 
 Private Sub UpdateView()
@@ -148,54 +148,30 @@ Private Sub BtnTakeInput_Click()
 End Sub
 
 Private Sub BtnCheckInput_Click()
-'    Dim mess As String
-'    mess = "The first value of datatype " & m_Optional.VarTypeToStr & " is " & Optional_ToStr(m_Optional) & vbCrLf
-'    mess = mess & "the User has given "
-'    If m_Optional.HasValue Then
-'        mess = mess & "the value: " & m_Optional.Value & vbCrLf
-'    Else
-'        mess = mess & "no value." & vbCrLf
-'    End If
-'    mess = mess & "The second value of datatype " & MEVbVarType.EVbVarType_ToStr(VarType(m_ManValue)) & " is " & Optional_ToStr(m_ManValue) & vbCrLf
-'    mess = mess & "the User has given the value " & m_ManValue
-'    MsgBox mess
-    Dim mess As String: mess = Check(m_Optional) & vbCrLf & Check(m_ManValue)
-    
-    MsgBox mess
+    MsgBox Check(m_Optional, 1, "m_Optional") & vbCrLf & _
+           Check(m_ManValue, 2, "m_ManValue")
 End Sub
 
-Function Check(v) As String
+Function Check(v, num As Byte, nam As String) As String
     Dim s As String
-    s = "The variable " & CheckDataType(v) & " is " & CheckOptional(v)
-    If TypeOf v Is Nullable Then
-        Dim o As Nullable: Set o = v
-        
-    End If
-    '    If m_Optional.HasValue Then
-'        mess = mess & "the value: " & m_Optional.Value & vbCrLf
-'    Else
-'        mess = mess & "no value." & vbCrLf
-'    End If
-
+    s = "The " & MString.AdverbNum_ToStr(num) & " variable " & nam & " of datatype " & CheckDataType(v) & " is " & CheckOptional(v) & "," & vbCrLf
+    s = s & "the user has given " & CheckValue(v)
+    Check = s
 End Function
     
 Function CheckDataType(v) As String
-    Dim s As String: s = s & "of datatype "
+    Dim s As String
     If TypeOf v Is Nullable Then
         Dim o As Nullable: Set o = v
-        s = s & o.VarTypeToStr
+        s = o.VarTypeToStr
     Else
-        s = s & MEVbVarType.EVbVarType_ToStr(VarType(v))
+        s = MEVbVarType.EVbVarType_ToStr(VarType(v))
     End If
+    CheckDataType = s
 End Function
 
 Function CheckOptional(v) As String
     CheckOptional = IIf(TypeOf v Is Nullable, "optional", "mandatory")
-    'If TypeOf v Is Nullable Then
-    '    CheckOptional = "optional"
-    'Else
-    '    CheckOptional = "mandatory"
-    'End If
 End Function
 
 Function CheckValue(v) As String
@@ -203,15 +179,12 @@ Function CheckValue(v) As String
     If TypeOf v Is Nullable Then
         Dim o As Nullable: Set o = v
         If o.HasValue Then
-            
+            s = "the value " & o.Value
         Else
-            
+            s = "no value"
         End If
-    '    If m_Optional.HasValue Then
-'        mess = mess & "the value: " & m_Optional.Value & vbCrLf
-'    Else
-'        mess = mess & "no value." & vbCrLf
-'    End If
-
-    
+    Else
+        s = "the value " & v
+    End If
+    CheckValue = s
 End Function
