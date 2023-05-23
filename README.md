@@ -36,4 +36,5 @@ functions IsEmpty / Is Nothing.
 With the Nullable class that just wraps a Variant you can express the optional situation more clearly and your code
 will be much more concise and readable than just by using a Variant, because a simple Variant can have so much more other meanings.
 
-![OptionalNullable Image](Resources/OptionalNullable.png "OptionalNullable Image")
+![OptionalNullable1 Image](Resources/OptionalNullable1.png "OptionalNullable1 Image")
+![OptionalNullable2 Image](Resources/OptionalNullable2.png "OptionalNullable2 Image")
