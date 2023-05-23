@@ -3,7 +3,7 @@
 
 [![GitHub](https://img.shields.io/github/license/OlimilO1402/Langg_Nullable?style=plastic)](https://github.com/OlimilO1402/Langg_Nullable/blob/master/LICENSE)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/OlimilO1402/Langg_Nullable?style=plastic)](https://github.com/OlimilO1402/Langg_Nullable/releases/latest)
-[![Github All Releases](https://img.shields.io/github/downloads/OlimilO1402/Langg_Nullable/total.svg)](https://github.com/OlimilO1402/Langg_Nullable/releases/download/v2023.1.1/OptionalNullable_v2023.01.1.zip)
+[![Github All Releases](https://img.shields.io/github/downloads/OlimilO1402/Langg_Nullable/total.svg)](https://github.com/OlimilO1402/Langg_Nullable/releases/download/v2023.1.1/OptionalNullable_v2023.1.1.zip)
 ![GitHub followers](https://img.shields.io/github/followers/OlimilO1402?style=social)
 
 
