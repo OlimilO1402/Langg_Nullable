@@ -23,7 +23,7 @@ Some ideas how we may deal with the situation:
 * You could say we only want positive values, so a negative value is the value for empty  
 * or only negative values, then any positive value is empty  
 * or any value without 0, so 0 is the definition for empty  
-* or maybe a special value like [IEEE754-NaN](https://github.com/OlimilO1402/IEEE754_Infinity)
+* or maybe a special value like [IEEE754-NaN](https://github.com/OlimilO1402/IEEE754_Infinity) (e.g. as used in [PaintPicture](https://learn.microsoft.com/en-us/previous-versions/bb918079(v=vs.140)))
 
 None of the above is ideal, in fact they are just workarounds.
 You can not reproduce the "optional"-situation afterwards, with a primitive datatype like Double.
