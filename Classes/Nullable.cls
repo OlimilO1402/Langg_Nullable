@@ -12,7 +12,9 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
 Option Explicit
-'needs MPtr and MEVbVartype
+'needs the modules:
+'* Ptr_Pointers\Modules\MPtr.bas
+'* WhatsInTheVariant\Modules\MEVbVarType.bas
 Private m_Value
 Private m_vt As EVbVarType
 
@@ -20,8 +22,23 @@ Friend Sub New_(ByVal vt As EVbVarType)
     m_vt = vt
 End Sub
 'Copy to MNew:
-Public Function Nullable(ByVal vt As EVbVarType) As Nullable
-    Set Nullable = New Nullable: Nullable.New_ vt
+'Public Function Nullable(ByVal vt As EVbVarType) As Nullable
+'    Set Nullable = New Nullable: Nullable.New_ vt
+'End Function
+
+Friend Sub NewC(other As Nullable)
+    With other
+        m_vt = .VarType
+        If .VarType = EVbVarType.vbObject Then
+            Set m_Value = .Value
+        Else
+            m_Value = .Value
+        End If
+    End With
+End Sub
+
+Public Function Clone() As Nullable
+    Set Clone = New Nullable: Clone.NewC Me
 End Function
 
 Public Property Let VarType(ByVal vt As EVbVarType)
